@@ -19,9 +19,6 @@ const Navbar = () => {
                           <Link className="nav-link" to="/about">About</Link>
                       </li>
                   </ul>
-                  <form className="d-flex">
-                      <input className="form-control me-2 border-secondary" type="search" placeholder="Search" aria-label="Search"/>
-                  </form>
               </div>
           </div>
       </nav>

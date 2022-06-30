@@ -1,12 +1,14 @@
 import React from 'react'
-import { useGlobalContext } from '../context'
+import {useAppContext} from "../context";
 
 const SearchForm = () => {
-  return (
-    <div>
-      <h2>search form component</h2>
-    </div>
-  )
+    const {setSearchTerm} = useAppContext();
+    return (
+        <form className="d-flex">
+            <input className="form-control me-2 border-secondary" type="search" placeholder="Search"
+                   aria-label="Search"/>
+        </form>
+    )
 }
 
 export default SearchForm

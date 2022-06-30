@@ -1,15 +1,41 @@
-import React, { useState, useContext, useEffect } from 'react'
-import { useCallback } from 'react'
+import React, {createContext, useState, useContext, useEffect} from 'react';
 
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
-const AppContext = React.createContext()
+const AppContext = createContext();
+export const useAppContext = () => useContext(AppContext);
 
-const AppProvider = ({ children }) => {
-  return <AppContext.Provider value='hello'>{children}</AppContext.Provider>
+export default function AppContextProvider({children}) {
+    const [loading, setLoading] = useState(true);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [cocktails, setCocktails] = useState([]);
+    const [comments, setComments] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:8000/cocktails")
+            .then(res => res.json())
+            .then(data => {
+                setCocktails(data);
+                setLoading(false);
+            })
+    }, []);
+    
+    console.log(cocktails)
+
+    useEffect(() => {
+        fetch("http://localhost:8000/comments")
+            .then(res => res.json())
+            .then(data => {
+                setComments(data);
+            })
+    }, []);
+    
+    return <AppContext.Provider
+        value={{
+            loading,
+            searchTerm,
+            cocktails,
+            setSearchTerm,
+        }}>{children}
+    </AppContext.Provider>
 }
 // make sure use
-export const useGlobalContext = () => {
-  return useContext(AppContext)
-}
 
-export { AppContext, AppProvider }
