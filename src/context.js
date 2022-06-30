@@ -18,16 +18,6 @@ export default function AppContextProvider({children}) {
             })
     }, []);
     
-    console.log(cocktails)
-
-    useEffect(() => {
-        fetch("http://localhost:8000/comments")
-            .then(res => res.json())
-            .then(data => {
-                setComments(data);
-            })
-    }, []);
-    
     return <AppContext.Provider
         value={{
             loading,

@@ -1,6 +1,7 @@
 import React from 'react'
 import Loading from "./Loading";
 import {useAppContext} from "../context";
+import Cocktail from "./Cocktail";
 
 const CocktailList = () => {
     const {cocktails, loading} = useAppContext();
@@ -14,8 +15,16 @@ const CocktailList = () => {
         )
     }
     return (
-        <div>
-            <h2>cocktail list component</h2>
+        <div className="container">
+            <div className="row">
+                    {cocktails.map((item) => {
+                        return (
+                            <div className="col-3">
+                                <Cocktail key={item.id} {...item} />
+                            </div>
+                        )
+                    })}
+            </div>
         </div>
     )
 }
