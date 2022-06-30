@@ -1,6 +1,11 @@
 import React from 'react'
 import {useParams, Link} from 'react-router-dom'
 import Loading from "../components/Loading";
+import Description from "../components/cocktail/Description";
+import IngredientsList from "../components/cocktail/IngredientsList";
+import Instructions from "../components/cocktail/Instructions";
+import Rating from "../components/cocktail/Rating";
+import CommentsList from "../components/comments/CommentsList";
 
 const SingleCocktail = () => {
     const {id} = useParams()
@@ -33,21 +38,37 @@ const SingleCocktail = () => {
     if (!cocktail) {
         return (<h2>No cocktail to display</h2>)
     }
-    const {name, img, type} = cocktail;
+    const {name, type, img, glass, description, ingredients, instructions, ratings} = cocktail;
     return (
         <div className="container">
             <div className="row">
                 <div className="col-4">
                     <div className="card">
-                        <img src="..." className="card-img-top" alt="..."/>
+                        <img src={"/images/" + img} className="card-img-top" alt={name}/>
                             <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
+                                <h2 className="card-title">{name}</h2>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">
+                                        <Rating ratings={ratings}/>
+                                    </li>
+                                    <li className="list-group-item">
+                                        Type: {type}
+                                    </li>
+                                    <li className="list-group-item">
+                                        Glass: {glass}
+                                    </li>
+                                </ul>
                             </div>
                     </div>
                 </div>
                 <div className="col-8">
-                    D
+                    <Description description={description}/>
+                    <IngredientsList list={ingredients}/>
+                    <Instructions list={instructions}/>
                 </div>
+            </div>
+            <div className="row">
+                <CommentsList id={id}/>
             </div>
         </div>
     )

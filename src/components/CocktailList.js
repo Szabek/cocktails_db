@@ -19,7 +19,7 @@ const CocktailList = () => {
             <div className="row">
                     {cocktails.map((item) => {
                         return (
-                            <div className="col-3">
+                            <div className="col-4">
                                 <Cocktail key={item.id} {...item} />
                             </div>
                         )
