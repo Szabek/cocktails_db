@@ -1,11 +1,16 @@
 import React from 'react'
 import Comment from "./Comment";
 import {useAppContext} from "../../context";
-import Cocktail from "../Cocktail";
+import AddComment from "./AddComment";
+import style from "../../styles/Comments.scss"
 
 const CommentsList = ({id}) => {
     const {getCommentsByID} = useAppContext();
     const coctailComments = getCommentsByID(parseInt(id));
+    const showCreator = () => {
+        let component = document.getElementById("addComment");
+        component.style.display = 'block';
+    }
     return (
         <div className="m-3">
             <h3>Comments:</h3>
@@ -16,6 +21,10 @@ const CommentsList = ({id}) => {
                     </div>
                 )
             })}
+            <button className="btn btn-warning" onClick={() => showCreator()}>AddComment</button>
+            <div id="addComment"> 
+                <AddComment idCoctail={id}/>
+            </div>
         </div>
     )
 }

@@ -6,17 +6,15 @@ const Comment = ({message, author, date}) => {
         <div>
             <div className="card">
                 <div className="card-header">
-                    {author}
+                    {date}
                 </div>
                 <div className="card-body">
                     <blockquote className="blockquote mb-0">
                         <p>{message}</p>
-                        <footer className="blockquote-footer">{date}</footer>
+                        <footer className="blockquote-footer">{author}</footer>
                     </blockquote>
                 </div>
             </div>
-            {/*<h5>author</h5>*/}
-            {/*<p>{message}</p>*/}
         </div>
         
     )

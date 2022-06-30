@@ -36,6 +36,33 @@ export default function AppContextProvider({children}) {
     const getCommentsByID = (id) => {
         return comments.filter((comment) => comment.id_coctail === id);
     }
+
+    const saveComments = (idCoctail, author, message ) => {
+        let currentDate = new Date().toISOString().slice(0, 10)
+        const commentToSend = {id:'' ,id_coctail: idCoctail,author: author, date:currentDate, message: message,  };
+        const requestOptions = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(commentToSend)
+        };
+        
+        fetch("http://localhost:8000/comments", requestOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.log(response.statusText)
+                }
+            })
+            .then(data => {
+                if (data) {
+                    setComments(data)
+                    window.location.reload();
+                } else {
+                    console.log("SERVER ERROR - saveComment()");
+                }
+            })
+    }
     
     return <AppContext.Provider
         value={{
@@ -43,7 +70,8 @@ export default function AppContextProvider({children}) {
             searchTerm,
             cocktails,
             setSearchTerm,
-            getCommentsByID
+            getCommentsByID,
+            saveComments
         }}>{children}
     </AppContext.Provider>
 }
