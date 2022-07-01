@@ -105,6 +105,39 @@ export default function AppContextProvider({children}) {
             })
     }
     
+    const getAlcoholChartInfo = () => {
+        let alcoholic = 0;
+        let nonAlcoholic = 0;
+        
+        cocktails.forEach((e) => {
+            if (e.type == 'alcoholic') {
+                alcoholic++;
+            }else {
+                nonAlcoholic++
+            }
+        })
+        return({
+            "alcoholic": alcoholic,
+            "nonAlcoholic": nonAlcoholic
+        })
+    }
+
+    const getGlassChartInfo = () => {
+        let info = {}
+
+        cocktails.forEach((e) => {
+            let currentGlass = e.glass;
+            if (!info[currentGlass]) {
+                info[currentGlass] = 1
+            }else {
+                let value = parseInt(info[currentGlass])
+                value++;
+                info[currentGlass] = value
+            }
+        })
+        return(info)
+    }
+    
     return <AppContext.Provider
         value={{
             loading,
@@ -114,7 +147,9 @@ export default function AppContextProvider({children}) {
             getCommentsByID,
             getCocktailById,
             saveComments,
-            rateCocktail
+            rateCocktail,
+            getAlcoholChartInfo,
+            getGlassChartInfo
         }}>{children}
     </AppContext.Provider>
 }

@@ -48,7 +48,7 @@
       "name": "Mojito",
       "type": "non-alcoholic",
       "img": "mojito.jpg",
-      "glass": "url",
+      "glass": "miska",
       "description": "Mojito (Spanish: [moˈxito]) is a traditional Cuban highball. Traditionally, a mojito is a cocktail that consists of five ingredients: white rum, sugar (traditionally sugar cane juice), lime juice, soda water, and mint. Its combination of sweetness, citrus, and herbaceous mint flavors is intended to complement the rum, and has made the mojito a popular summer drink.When preparing a mojito, fresh lime juice is added to sugar (or to simple syrup) and mint leaves. The mixture is then gently mashed with a muddler. The mint leaves should only be bruised to release the essential oils and should not be shredded. Then rum is added and the mixture is briefly stirred to dissolve the sugar and to lift the mint leaves up from the bottom for better presentation. Finally, the drink is topped with crushed ice and sparkling soda water. Mint leaves and lime wedges are used to garnish the glass.  The mojito is one of the most famous rum-based highballs. There are several versions of the mojito.",
       "ingredients": [
         {
@@ -88,7 +88,7 @@
       "name": "Mojito",
       "type": "non-alcoholic",
       "img": "mojito.jpg",
-      "glass": "url",
+      "glass": "kubek",
       "description": "Mojito (Spanish: [moˈxito]) is a traditional Cuban highball. Traditionally, a mojito is a cocktail that consists of five ingredients: white rum, sugar (traditionally sugar cane juice), lime juice, soda water, and mint. Its combination of sweetness, citrus, and herbaceous mint flavors is intended to complement the rum, and has made the mojito a popular summer drink.When preparing a mojito, fresh lime juice is added to sugar (or to simple syrup) and mint leaves. The mixture is then gently mashed with a muddler. The mint leaves should only be bruised to release the essential oils and should not be shredded. Then rum is added and the mixture is briefly stirred to dissolve the sugar and to lift the mint leaves up from the bottom for better presentation. Finally, the drink is topped with crushed ice and sparkling soda water. Mint leaves and lime wedges are used to garnish the glass.  The mojito is one of the most famous rum-based highballs. There are several versions of the mojito.",
       "ingredients": [
         {
