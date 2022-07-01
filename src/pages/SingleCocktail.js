@@ -6,11 +6,23 @@ import IngredientsList from "../components/cocktail/IngredientsList";
 import Instructions from "../components/cocktail/Instructions";
 import Rating from "../components/cocktail/Rating";
 import CommentsList from "../components/comments/CommentsList";
+import jsPDF from "jspdf";
 
 const SingleCocktail = () => {
     const {id} = useParams()
     const [loading, setLoading] = React.useState(false)
     const [cocktail, setCocktail] = React.useState(null)
+
+    const print = () => {
+        var doc = new jsPDF('p', 'pt');
+        let space = 30;
+        
+        {instructions.map((instruction, i) => (
+            doc.text(10, space, instruction),
+            space = space + 20
+        ))}
+        doc.save('demo.pdf')
+    };
 
     React.useEffect(() => {
         setLoading(true)
@@ -57,6 +69,7 @@ const SingleCocktail = () => {
                                     <li className="list-group-item">
                                         Glass: {glass}
                                     </li>
+                                    <button className="btn btn-warning" onClick={print}>Save to file</button>
                                 </ul>
                             </div>
                     </div>
