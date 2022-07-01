@@ -17,7 +17,7 @@ export default function AppContextProvider({children}) {
                 setCocktails(data);
                 setLoading(false);
                 if (searchTerm != '') {
-                    let newCocktailsList = cocktails.filter(cocktail => cocktail.name.toLowerCase().includes(searchTerm))
+                    let newCocktailsList = cocktails.filter(cocktail => cocktail.name.toLowerCase().includes(searchTerm.toLowerCase()))
                     setCocktails(newCocktailsList);
                 }
             })
