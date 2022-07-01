@@ -9,6 +9,7 @@ import Statistics from "./pages/Statistics";
 //components
 import SingleCocktail from "./pages/SingleCocktail";
 import Footer from "./components/Footer";
+import LoginAdmin from "./components/adminPanel/LoginAdmin";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/about" element={<About/>}/>
           <Route exact path="/statistics" element={<Statistics/>}/>
           <Route exact path="/cocktail/:id" element={<SingleCocktail/>}/>
+          <Route exact path="/admin/login" element={<LoginAdmin/>}/>
           <Route path="*" element={<Error/>}/>
       </Routes>
       <Footer/>

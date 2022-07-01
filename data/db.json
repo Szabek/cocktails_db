@@ -291,6 +291,19 @@
       "author": "Mirek",
       "date": "2022-06-30",
       "message": "Lux "
+    },
+    {
+      "id": 8,
+      "id_coctail": 3,
+      "author": "ja",
+      "date": "2022-07-01",
+      "message": "Dobre"
+    }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "logged": 0
     }
   ]
 }

@@ -8,6 +8,7 @@ export default function AppContextProvider({children}) {
     const [searchTerm, setSearchTerm] = useState('');
     const [cocktails, setCocktails] = useState([]);
     const [comments, setComments] = useState([]);
+    const [adminRole, setAdminRole] = useState(false);
 
     const fetchDrinks = useCallback( async () => {
         fetch("http://localhost:8000/cocktails")
@@ -144,6 +145,8 @@ export default function AppContextProvider({children}) {
             searchTerm,
             cocktails,
             setSearchTerm,
+            adminRole,
+            setAdminRole,
             getCommentsByID,
             getCocktailById,
             saveComments,
