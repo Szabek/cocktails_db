@@ -37,6 +37,49 @@
         4,
         5,
         2,
+        4,
+        5,
+        3,
+        5
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Mojito",
+      "type": "non-alcoholic",
+      "img": "mojito.jpg",
+      "glass": "url",
+      "description": "Mojito (Spanish: [moˈxito]) is a traditional Cuban highball. Traditionally, a mojito is a cocktail that consists of five ingredients: white rum, sugar (traditionally sugar cane juice), lime juice, soda water, and mint. Its combination of sweetness, citrus, and herbaceous mint flavors is intended to complement the rum, and has made the mojito a popular summer drink.When preparing a mojito, fresh lime juice is added to sugar (or to simple syrup) and mint leaves. The mixture is then gently mashed with a muddler. The mint leaves should only be bruised to release the essential oils and should not be shredded. Then rum is added and the mixture is briefly stirred to dissolve the sugar and to lift the mint leaves up from the bottom for better presentation. Finally, the drink is topped with crushed ice and sparkling soda water. Mint leaves and lime wedges are used to garnish the glass.  The mojito is one of the most famous rum-based highballs. There are several versions of the mojito.",
+      "ingredients": [
+        {
+          "name": "Biały Rum",
+          "amount": "50",
+          "measurement": "ml"
+        },
+        {
+          "name": "Limonka",
+          "amount": "0.5",
+          "measurement": "szt"
+        },
+        {
+          "name": "Cukier Trzcinowy",
+          "amount": "2",
+          "measurement": "łyżeczki"
+        }
+      ],
+      "instructions": [
+        "Limonkę wyszorować, pokroić na ćwiartki i wrzucić do szklanki.",
+        "Zasypać cukrem i dokładnie ugnieść.",
+        "Następnie dodać listki mięty i znowu ugnieść.",
+        "Do połowy wysokości szklanki dodać lód, a następnie rum i znów lód.",
+        "Zamieszać.",
+        "Na wierzch dodać wodę gazowaną i delikatnie zmieszać.",
+        "Szklankę udekorować limonką i listkami mięty."
+      ],
+      "ratings": [
+        4,
+        5,
+        2,
         4
       ]
     },

@@ -36,6 +36,10 @@ export default function AppContextProvider({children}) {
     const getCommentsByID = (id) => {
         return comments.filter((comment) => comment.id_coctail === id);
     }
+    
+    const getCocktailById = id => {
+        return cocktails.find((cocktail) => cocktail.id === id);
+    }
 
     const saveComments = (idCoctail, author, message ) => {
         let currentDate = new Date().toISOString().slice(0, 10)
@@ -63,6 +67,43 @@ export default function AppContextProvider({children}) {
                 }
             })
     }
+
+    const rateCocktail = (id, ratings) => {
+        let cocktailToEdit = getCocktailById(parseInt(id));
+        let currentRatings = cocktailToEdit.ratings;
+        currentRatings.push(parseInt(ratings));
+        const rateToSend = {
+            id:id,
+            name:cocktailToEdit.name,
+            type:cocktailToEdit.type,
+            img:cocktailToEdit.img,
+            glass:cocktailToEdit.glass,
+            description:cocktailToEdit.description,
+            ingredients:cocktailToEdit.ingredients,
+            instructions:cocktailToEdit.instructions,
+            ratings:currentRatings,
+        };
+        const requestOptions = {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(rateToSend)
+        };
+        fetch('http://localhost:8000/cocktails/' + id, requestOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.log(response.statusText)
+                }
+            })
+            .then(data => {
+                if (data) {
+                    window.location.reload();
+                } else {
+                    console.log("SERVER ERROR - rateCoctail()");
+                }
+            })
+    }
     
     return <AppContext.Provider
         value={{
@@ -71,9 +112,10 @@ export default function AppContextProvider({children}) {
             cocktails,
             setSearchTerm,
             getCommentsByID,
-            saveComments
+            getCocktailById,
+            saveComments,
+            rateCocktail
         }}>{children}
     </AppContext.Provider>
 }
-// make sure use
 

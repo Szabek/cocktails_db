@@ -49,7 +49,7 @@ const SingleCocktail = () => {
                                 <h2 className="card-title">{name}</h2>
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item">
-                                        <Rating ratings={ratings}/>
+                                        <Rating id={id} ratings={ratings}/>
                                     </li>
                                     <li className="list-group-item">
                                         Type: {type}
